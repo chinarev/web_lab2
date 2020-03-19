@@ -1,0 +1,121 @@
+<html>
+<!--
+ Анимация намеренно сделана некорректно!
+ Необходимо выяснить что именно здесь некорректно и сделать правильно.
+ Данный пример создан чтобы показать как должен выглядеть лоадер
+-->
+<head>
+    <style>
+        body {
+            background: #343434;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loader_text {
+            font-family: sans-serif;
+            font-size: 5px;
+            color: #A19887;
+            animation: 3s ease-in-out infinite textZoomInOut;
+
+        }
+
+        .loader_shape {
+            border-radius: 150px;
+            border-style: solid;
+            border-width: 5px;
+            position: absolute;
+            background-color: transparent;
+        }
+
+        .shape1{
+            width: 90px;
+            height: 200px;
+            border-color: #210B61;
+            animation: 4s ease-in-out infinite moveshape1;
+
+
+        }
+
+        .shape2{
+            width: 90px;
+            height: 200px;
+            border-color: #F2F5A9;
+            animation: 4s ease-in-out infinite moveshape2;
+
+        }
+
+
+        @keyframes moveshape1{
+            0% {
+                transform: scale(1, 1);
+                transform: rotate(0deg);
+            }
+
+            50%{
+                transform: scale(2, 2);
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: scale(1, 1);
+                transform: rotate(360deg);
+
+            }
+        }
+
+        @keyframes moveshape2{
+            0% {
+                transform: scale(2, 2);
+                transform: rotate(0deg);
+
+            }
+
+            50%{
+                transform: scale(1, 1);
+                transform: rotate(-180deg);
+            }
+
+            100% {
+                transform: scale(2, 2);
+                transform: rotate(-360deg);
+            }
+        }
+
+
+        @keyframes textZoomInOut {
+            0% {
+                transform: scale(3, 3);
+            }
+
+            50% {
+                transform: scale(4, 5);
+            }
+
+            100% {
+                transform: scale(3, 3);
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <span class="loader_text">loading...</span>
+        <div class="loader_shape shape1"></div>
+        <div class="loader_shape shape2"></div>
+    </div>
+</body>
+</html>
